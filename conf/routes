@@ -10,3 +10,7 @@ GET     /public/                                staticDir:public
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}
+
+# Administration
+GET     /admin/?                                Admin.index
+*       /crud                                  module:crud

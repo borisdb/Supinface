@@ -1,0 +1,36 @@
+#Inital Data pour les tests
+
+User(boris):
+ idBooster: 78447
+ password: pass
+ firstName: Boris
+ lastName: Dubois
+ email: 78447@supinfo.com
+
+User(gaël):
+ idBooster: 112350
+ password: pass
+ firstName: Gaël
+ lastName: Lamborelle
+ email: 112350@supinfo.com
+
+User(angeline):
+ idBooster: 60861
+ password: pass
+ firstName: Angeline
+ lastName: Perdereau
+ email: 60861@supinfo.com
+
+User(ivanhoe):
+ idBooster: 80534
+ password: pass
+ firstName: Ivanhoë
+ lastName: Garin
+ email: 80534@supinfo.com
+
+User(Joanan):
+ idBooster: 79027
+ password: pass
+ firstName: Joanan
+ lastName: Mpo
+ email: 79027@supinfo.com
