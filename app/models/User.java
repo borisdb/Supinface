@@ -41,7 +41,7 @@ public class User extends Model {
 			
 			Pattern p = Pattern.compile("\\.");
 			String[] nomprenom=p.split(login);
-			if(nomprenom.length!=0)
+			if(nomprenom.length==2)
 			{
 				user=User.find("byFirstNameAndLastNameAndPassword",nomprenom[0],nomprenom[1],password).first();
 			}
@@ -66,5 +66,9 @@ public class User extends Model {
 		return user;
 	}
 	
+	@Override
+	public String toString() {
+		return idBooster+" : "+firstName+" : "+lastName;
+	}
 		
 }
