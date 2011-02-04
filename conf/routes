@@ -15,4 +15,5 @@ GET     /public/                                staticDir:public
 GET     /admin/?                                Admin.index
 *       /crud                                  module:crud
 
-GET 	/auth/{login}/{password}				Auth.login(format:'json')									
+GET 	/auth/login/{login}/{password}				Auth.login(format:'json')
+GET		/auth/check/{token}							Auth.checkAuth									
