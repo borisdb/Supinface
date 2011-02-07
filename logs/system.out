@@ -1,0 +1,7 @@
+17:54:59,283 INFO  ~ Starting D:\SUPINFO\LABO JAVA\Supinface\Supinface
+17:54:59,288 INFO  ~ Module secure is available (D:\play-1.1.1\modules\secure)
+17:54:59,288 INFO  ~ Module crud is available (D:\play-1.1.1\modules\crud)
+17:55:00,219 WARN  ~ You're running Play! in DEV mode
+17:55:00,365 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+17:55:08,344 INFO  ~ Connected to jdbc:mysql://localhost/supinface?useUnicode=yes&characterEncoding=UTF-8&connectionCollation=utf8_general_ci
+17:55:09,051 INFO  ~ Application 'Supinface' is now started !

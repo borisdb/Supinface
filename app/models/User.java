@@ -1,36 +1,47 @@
 package models;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.List;
+import javax.persistence.CascadeType;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import play.db.jpa.Model;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 @Entity
+@Table(name="Users")
 public class User extends Model {
 
 	public String idBooster;
-	public String password;
-	public String firstName;
-	public String lastName;
-	public String email;
+    public String lastName;
+    public String firstName;
+    public String email;
+    public String password;
+    public String pictureUrl;
+    public int promo;
+    public String other_infos;
 
-	
-	
-	
-	public User(String idBooster, String password, String firstName,
-			String lastName, String email) {
-		this.idBooster = idBooster;
-		this.password = password;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-	}
+    @ManyToOne
+    public Lab lab;
+    @ManyToOne
+    public Campus campus;
 
-
-
-
+    @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+    public List<Contact> contacts;
+    @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+    public List<Skill> skills;
+    @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+    public List<Group> owned_groups;
+    @ManyToMany(mappedBy="members")
+    public List<Group> inside_groups;
+    
 	public static User connect(String login,String password)
 	{
 		User user=User.find("byIdBoosterAndPassword",login,password).first();
@@ -72,3 +83,4 @@ public class User extends Model {
 	}
 		
 }
+
