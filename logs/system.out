@@ -1,7 +1,161 @@
-17:54:59,283 INFO  ~ Starting D:\SUPINFO\LABO JAVA\Supinface\Supinface
-17:54:59,288 INFO  ~ Module secure is available (D:\play-1.1.1\modules\secure)
-17:54:59,288 INFO  ~ Module crud is available (D:\play-1.1.1\modules\crud)
-17:55:00,219 WARN  ~ You're running Play! in DEV mode
-17:55:00,365 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
-17:55:08,344 INFO  ~ Connected to jdbc:mysql://localhost/supinface?useUnicode=yes&characterEncoding=UTF-8&connectionCollation=utf8_general_ci
-17:55:09,051 INFO  ~ Application 'Supinface' is now started !
+21:42:25,116 INFO  ~ Starting D:\SUPINFO\LABO JAVA\Supinface\Supinface
+21:42:25,121 INFO  ~ Module secure is available (D:\play-1.1.1\modules\secure)
+21:42:25,121 INFO  ~ Module crud is available (D:\play-1.1.1\modules\crud)
+21:42:25,959 WARN  ~ You're running Play! in DEV mode
+21:42:26,100 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+21:42:33,230 INFO  ~ Connected to jdbc:mysql://localhost/supinface?useUnicode=yes&characterEncoding=UTF-8&connectionCollation=utf8_general_ci
+21:42:34,227 ERROR ~ 
+
+@65cpga6m4
+Internal Server Error (500) for request GET /
+
+JPA error
+A JPA error occurred (Unable to build EntityManagerFactory): cannot simultaneously fetch multiple bags
+
+play.exceptions.JPAException: Unable to build EntityManagerFactory
+	at play.db.jpa.JPAPlugin.onApplicationStart(JPAPlugin.java:227)
+	at play.Play.start(Play.java:427)
+	at play.Play.detectChanges(Play.java:530)
+	at play.Invoker$Invocation.init(Invoker.java:100)
+	at Invocation.HTTP Request(Play!)
+Caused by: org.hibernate.loader.MultipleBagFetchException: cannot simultaneously fetch multiple bags
+	at org.hibernate.loader.BasicLoader.postInstantiate(BasicLoader.java:94)
+	at org.hibernate.loader.entity.EntityLoader.<init>(EntityLoader.java:120)
+	at org.hibernate.loader.entity.EntityLoader.<init>(EntityLoader.java:72)
+	at org.hibernate.loader.entity.EntityLoader.<init>(EntityLoader.java:55)
+	at org.hibernate.loader.entity.BatchingEntityLoader.createBatchingEntityLoader(BatchingEntityLoader.java:133)
+	at org.hibernate.persister.entity.AbstractEntityPersister.createEntityLoader(AbstractEntityPersister.java:1898)
+	at org.hibernate.persister.entity.AbstractEntityPersister.createEntityLoader(AbstractEntityPersister.java:1921)
+	at org.hibernate.persister.entity.AbstractEntityPersister.createLoaders(AbstractEntityPersister.java:3182)
+	at org.hibernate.persister.entity.AbstractEntityPersister.postInstantiate(AbstractEntityPersister.java:3175)
+	at org.hibernate.persister.entity.SingleTableEntityPersister.postInstantiate(SingleTableEntityPersister.java:728)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:359)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1385)
+	at org.hibernate.cfg.AnnotationConfiguration.buildSessionFactory(AnnotationConfiguration.java:954)
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:892)
+	at play.db.jpa.JPAPlugin.onApplicationStart(JPAPlugin.java:225)
+	... 4 more
+21:42:34,589 ERROR ~ 
+
+@65cpga6m5
+Internal Server Error (500) for request GET /favicon.ico
+
+JPA error
+A JPA error occurred (Unable to build EntityManagerFactory): cannot simultaneously fetch multiple bags
+
+play.exceptions.JPAException: Unable to build EntityManagerFactory
+	at play.db.jpa.JPAPlugin.onApplicationStart(JPAPlugin.java:227)
+	at play.Play.start(Play.java:427)
+	at play.Play.detectChanges(Play.java:530)
+	at play.Invoker$Invocation.init(Invoker.java:100)
+	at Invocation.HTTP Request(Play!)
+Caused by: org.hibernate.loader.MultipleBagFetchException: cannot simultaneously fetch multiple bags
+	at org.hibernate.loader.BasicLoader.postInstantiate(BasicLoader.java:94)
+	at org.hibernate.loader.entity.EntityLoader.<init>(EntityLoader.java:120)
+	at org.hibernate.loader.entity.EntityLoader.<init>(EntityLoader.java:72)
+	at org.hibernate.loader.entity.EntityLoader.<init>(EntityLoader.java:55)
+	at org.hibernate.loader.entity.BatchingEntityLoader.createBatchingEntityLoader(BatchingEntityLoader.java:133)
+	at org.hibernate.persister.entity.AbstractEntityPersister.createEntityLoader(AbstractEntityPersister.java:1898)
+	at org.hibernate.persister.entity.AbstractEntityPersister.createEntityLoader(AbstractEntityPersister.java:1921)
+	at org.hibernate.persister.entity.AbstractEntityPersister.createLoaders(AbstractEntityPersister.java:3182)
+	at org.hibernate.persister.entity.AbstractEntityPersister.postInstantiate(AbstractEntityPersister.java:3175)
+	at org.hibernate.persister.entity.SingleTableEntityPersister.postInstantiate(SingleTableEntityPersister.java:728)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:359)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1385)
+	at org.hibernate.cfg.AnnotationConfiguration.buildSessionFactory(AnnotationConfiguration.java:954)
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:892)
+	at play.db.jpa.JPAPlugin.onApplicationStart(JPAPlugin.java:225)
+	... 4 more
+21:50:35,662 ERROR ~ 
+
+@65cpga6m6
+Internal Server Error (500) for request GET /
+
+JPA error
+A JPA error occurred (Unable to build EntityManagerFactory): cannot simultaneously fetch multiple bags
+
+play.exceptions.JPAException: Unable to build EntityManagerFactory
+	at play.db.jpa.JPAPlugin.onApplicationStart(JPAPlugin.java:227)
+	at play.Play.start(Play.java:427)
+	at play.Play.detectChanges(Play.java:530)
+	at play.Invoker$Invocation.init(Invoker.java:100)
+	at Invocation.HTTP Request(Play!)
+Caused by: org.hibernate.loader.MultipleBagFetchException: cannot simultaneously fetch multiple bags
+	at org.hibernate.loader.BasicLoader.postInstantiate(BasicLoader.java:94)
+	at org.hibernate.loader.entity.EntityLoader.<init>(EntityLoader.java:120)
+	at org.hibernate.loader.entity.EntityLoader.<init>(EntityLoader.java:72)
+	at org.hibernate.loader.entity.EntityLoader.<init>(EntityLoader.java:55)
+	at org.hibernate.loader.entity.BatchingEntityLoader.createBatchingEntityLoader(BatchingEntityLoader.java:133)
+	at org.hibernate.persister.entity.AbstractEntityPersister.createEntityLoader(AbstractEntityPersister.java:1898)
+	at org.hibernate.persister.entity.AbstractEntityPersister.createEntityLoader(AbstractEntityPersister.java:1921)
+	at org.hibernate.persister.entity.AbstractEntityPersister.createLoaders(AbstractEntityPersister.java:3182)
+	at org.hibernate.persister.entity.AbstractEntityPersister.postInstantiate(AbstractEntityPersister.java:3175)
+	at org.hibernate.persister.entity.SingleTableEntityPersister.postInstantiate(SingleTableEntityPersister.java:728)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:359)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1385)
+	at org.hibernate.cfg.AnnotationConfiguration.buildSessionFactory(AnnotationConfiguration.java:954)
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:892)
+	at play.db.jpa.JPAPlugin.onApplicationStart(JPAPlugin.java:225)
+	... 4 more
+21:50:37,662 ERROR ~ 
+
+@65cpga6m7
+Internal Server Error (500) for request GET /
+
+JPA error
+A JPA error occurred (Unable to build EntityManagerFactory): cannot simultaneously fetch multiple bags
+
+play.exceptions.JPAException: Unable to build EntityManagerFactory
+	at play.db.jpa.JPAPlugin.onApplicationStart(JPAPlugin.java:227)
+	at play.Play.start(Play.java:427)
+	at play.Play.detectChanges(Play.java:530)
+	at play.Invoker$Invocation.init(Invoker.java:100)
+	at Invocation.HTTP Request(Play!)
+Caused by: org.hibernate.loader.MultipleBagFetchException: cannot simultaneously fetch multiple bags
+	at org.hibernate.loader.BasicLoader.postInstantiate(BasicLoader.java:94)
+	at org.hibernate.loader.entity.EntityLoader.<init>(EntityLoader.java:120)
+	at org.hibernate.loader.entity.EntityLoader.<init>(EntityLoader.java:72)
+	at org.hibernate.loader.entity.EntityLoader.<init>(EntityLoader.java:55)
+	at org.hibernate.loader.entity.BatchingEntityLoader.createBatchingEntityLoader(BatchingEntityLoader.java:133)
+	at org.hibernate.persister.entity.AbstractEntityPersister.createEntityLoader(AbstractEntityPersister.java:1898)
+	at org.hibernate.persister.entity.AbstractEntityPersister.createEntityLoader(AbstractEntityPersister.java:1921)
+	at org.hibernate.persister.entity.AbstractEntityPersister.createLoaders(AbstractEntityPersister.java:3182)
+	at org.hibernate.persister.entity.AbstractEntityPersister.postInstantiate(AbstractEntityPersister.java:3175)
+	at org.hibernate.persister.entity.SingleTableEntityPersister.postInstantiate(SingleTableEntityPersister.java:728)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:359)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1385)
+	at org.hibernate.cfg.AnnotationConfiguration.buildSessionFactory(AnnotationConfiguration.java:954)
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:892)
+	at play.db.jpa.JPAPlugin.onApplicationStart(JPAPlugin.java:225)
+	... 4 more
+21:50:39,028 ERROR ~ 
+
+@65cpga6m8
+Internal Server Error (500) for request GET /favicon.ico
+
+JPA error
+A JPA error occurred (Unable to build EntityManagerFactory): cannot simultaneously fetch multiple bags
+
+play.exceptions.JPAException: Unable to build EntityManagerFactory
+	at play.db.jpa.JPAPlugin.onApplicationStart(JPAPlugin.java:227)
+	at play.Play.start(Play.java:427)
+	at play.Play.detectChanges(Play.java:530)
+	at play.Invoker$Invocation.init(Invoker.java:100)
+	at Invocation.HTTP Request(Play!)
+Caused by: org.hibernate.loader.MultipleBagFetchException: cannot simultaneously fetch multiple bags
+	at org.hibernate.loader.BasicLoader.postInstantiate(BasicLoader.java:94)
+	at org.hibernate.loader.entity.EntityLoader.<init>(EntityLoader.java:120)
+	at org.hibernate.loader.entity.EntityLoader.<init>(EntityLoader.java:72)
+	at org.hibernate.loader.entity.EntityLoader.<init>(EntityLoader.java:55)
+	at org.hibernate.loader.entity.BatchingEntityLoader.createBatchingEntityLoader(BatchingEntityLoader.java:133)
+	at org.hibernate.persister.entity.AbstractEntityPersister.createEntityLoader(AbstractEntityPersister.java:1898)
+	at org.hibernate.persister.entity.AbstractEntityPersister.createEntityLoader(AbstractEntityPersister.java:1921)
+	at org.hibernate.persister.entity.AbstractEntityPersister.createLoaders(AbstractEntityPersister.java:3182)
+	at org.hibernate.persister.entity.AbstractEntityPersister.postInstantiate(AbstractEntityPersister.java:3175)
+	at org.hibernate.persister.entity.SingleTableEntityPersister.postInstantiate(SingleTableEntityPersister.java:728)
+	at org.hibernate.impl.SessionFactoryImpl.<init>(SessionFactoryImpl.java:359)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1385)
+	at org.hibernate.cfg.AnnotationConfiguration.buildSessionFactory(AnnotationConfiguration.java:954)
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:892)
+	at play.db.jpa.JPAPlugin.onApplicationStart(JPAPlugin.java:225)
+	... 4 more
