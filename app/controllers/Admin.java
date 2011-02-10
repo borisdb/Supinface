@@ -15,10 +15,12 @@ public class Admin extends Controller {
 	static void setConnectedUser(){
 		if(Security.isConnected()){
 			String wtf=Security.connected();
-			System.out.println(wtf);
+			//affichage dans la console
+			System.out.println("User logged : "+wtf);
 			User user = User.find("byIdBooster",Security.connected()).first();
 			if(user==null)
 			{
+			    //verifier si login via nom.prenom
 				Pattern p = Pattern.compile("\\.");
 				String[] nomprenom=p.split(Security.connected());
 				if(nomprenom.length==2)
@@ -28,7 +30,7 @@ public class Admin extends Controller {
 			}
 			if(user==null)
 			{
-				// verifier email
+				// verifier si login via email
 				
 				Pattern pattern = Pattern.compile("@");
 				Matcher matcher=pattern.matcher(Security.connected());

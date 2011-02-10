@@ -9,8 +9,8 @@ import play.test.Fixtures;
 public class Bootstrap extends Job{
 
 	public void doJob(){
-		if(User.count()==0){
-		//Fixtures.load("initial-data.yml");
+		if(User.count()>=0){
+		Fixtures.load("initial-data.yml");
 		}
 	}
 	

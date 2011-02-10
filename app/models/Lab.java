@@ -11,8 +11,8 @@ import play.db.jpa.Model;
 @Table(name="Labs")
 public class Lab extends Model {
     public String name;
-    @OneToMany(mappedBy="lab")
-    public List<User> members;
+//    @OneToMany(mappedBy="lab")
+//    public List<User> members;
     @OneToOne
     public User glm;
 }

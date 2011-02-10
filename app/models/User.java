@@ -5,10 +5,13 @@ import javax.persistence.CascadeType;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.codehaus.jackson.annotate.JsonBackReference;
 
 import play.db.jpa.Model;
 
@@ -28,21 +31,30 @@ public class User extends Model {
     public int promo;
     public String other_infos;
 
+//    @ManyToOne
+//    public Lab lab;
+    
+    @JsonBackReference("campus-members")
     @ManyToOne
-    public Lab lab;
-    @ManyToOne
+    @JoinColumn
     public Campus campus;
 
-    @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-    public List<Contact> contacts;
-    @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-    public List<Skill> skills;
-    @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-    public List<Group> owned_groups;
-    @ManyToMany(mappedBy="members")
-    public List<Group> inside_groups;
-    
-	public static User connect(String login,String password)
+//    @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+//    public List<Contact> contacts;
+//    @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+//    public List<Skill> skills;
+//    @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+//    public List<Group> owned_groups;
+//    @ManyToMany(mappedBy="members")
+//    public List<Group> inside_groups;
+//    
+    public User()
+    {
+        
+    }
+
+
+    public static User connect(String login,String password)
 	{
 		User user=User.find("byIdBoosterAndPassword",login,password).first();
 		
