@@ -1,8 +1,13 @@
 package controllers;
 
+import java.io.IOException;
 import java.util.Date;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
+
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
 
 import com.sun.org.apache.bcel.internal.generic.NEW;
 
@@ -10,6 +15,7 @@ import play.db.jpa.Model;
 import play.jobs.Every;
 import play.jobs.Job;
 import play.mvc.Controller;
+import models.MyExclusionStrategy;
 import models.User;
 
 public class Auth extends Controller {
@@ -21,8 +27,8 @@ public class Auth extends Controller {
 		User user = User.connect(login, password);
 		if (user != null) {
 			createAuth(user);
-			renderJSON(loggedUserMap);
 
+			renderJSON(user);
 		} else {
 			renderJSON(msg);
 		}

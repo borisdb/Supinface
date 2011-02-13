@@ -13,7 +13,7 @@ public class BasicTest extends UnitTest {
 	
     @Test
     public void tryConnectAsUser(){
-    	new User("78447", "pass", "Boris", "Dubois", "78447@supinfo.com").save();
+    	//new User("78447", "pass", "Boris", "Dubois", "78447@supinfo.com").save();
     	
     	//Test
     	assertNotNull(User.connect("78447", "pass"));
