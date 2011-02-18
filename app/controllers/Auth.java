@@ -14,7 +14,9 @@ import com.sun.org.apache.bcel.internal.generic.NEW;
 import play.db.jpa.Model;
 import play.jobs.Every;
 import play.jobs.Job;
+import play.libs.WS.HttpResponse;
 import play.mvc.Controller;
+import models.MyExclusionStrategy;
 import models.User;
 
 public class Auth extends Controller {
@@ -22,29 +24,14 @@ public class Auth extends Controller {
     private static ConcurrentHashMap<String, LoggedUser> loggedUserMap = new ConcurrentHashMap<String, LoggedUser>();
 
     public static void login(String login, String password) {
-        ObjectMapper mapper = new ObjectMapper();
-        
         String msg = "bad login/password";
         User user = User.connect(login, password);
         if (user != null) {
             createAuth(user);
-            //renderJSON(loggedUserMap);
-            try {
-                String usr= mapper.writeValueAsString(user);
-                System.out.println(usr);
-            } catch (JsonGenerationException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (JsonMappingException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
+            throw new RenderJson(loggedUserMap, new MyExclusionStrategy(String.class));
         } else {
-            renderJSON(msg);
-        }
+           unauthorized("login");
+            }
     }
 
     /**
@@ -54,9 +41,9 @@ public class Auth extends Controller {
      * @return
      */
     public static boolean checkAuth(String token) {
+
         if (loggedUserMap.containsKey(token)) {
             LoggedUser loggedUser = loggedUserMap.get(token);
-
             // 1800000 pour 30 min
             if (loggedUser.getDate().getTime() + 1800000 < new Date().getTime()) {
                 loggedUserMap.remove(token);

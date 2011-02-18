@@ -11,7 +11,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.codehaus.jackson.annotate.JsonBackReference;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
+
 
 import play.db.jpa.Model;
 
@@ -26,34 +28,34 @@ public class User extends Model {
     public String lastName;
     public String firstName;
     public String email;
+    @NoRender
     public String password;
     public String pictureUrl;
     public int promo;
     public String other_infos;
 
+
 //    @ManyToOne
 //    public Lab lab;
     
-    @JsonBackReference("campus-members")
     @ManyToOne
     @JoinColumn
     public Campus campus;
 
-//    @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
-//    public List<Contact> contacts;
-//    @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
-//    public List<Skill> skills;
 //    @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+//    public List<Contact> contacts;
+    @NoRender
+    @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+    public List<Skill> skills;
+//    @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
 //    public List<Group> owned_groups;
 //    @ManyToMany(mappedBy="members")
 //    public List<Group> inside_groups;
-//    
-    public User()
-    {
-        
-    }
 
 
+    
+    
+    
     public static User connect(String login,String password)
 	{
 		User user=User.find("byIdBoosterAndPassword",login,password).first();
@@ -89,9 +91,24 @@ public class User extends Model {
 		return user;
 	}
 	
-	@Override
+	public User(String idBooster, String lastName, String firstName, String email,
+        String password, String pictureUrl, int promo, String other_infos,
+        Campus campus) {
+    super();
+    this.idBooster = idBooster;
+    this.lastName = lastName;
+    this.firstName = firstName;
+    this.email = email;
+    this.password = password;
+    this.pictureUrl = pictureUrl;
+    this.promo = promo;
+    this.other_infos = other_infos;
+    this.campus = campus;
+}
+
+    @Override
 	public String toString() {
-		return idBooster+" : "+firstName+" : "+lastName;
+		return idBooster+" : "+firstName+" : "+lastName+" : "+email+" : "+password+" : "+pictureUrl+" : "+promo+" : "+other_infos+" : "+campus.name;
 	}
 		
 }

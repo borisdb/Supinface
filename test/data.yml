@@ -1,7 +1,97 @@
-# you describe your data using the YAML notation here
-# and then load them using Fixtures.load("data.yml")
+#Inital Data pour les tests
 
-# User(bob):
-#   email: bob@gmail.com
-#   password: secret
-#   fullname: Bob
+Campus(montreal):
+ name: Montréal
+
+Campus(lyon):
+  name: Lyon
+
+User(boris):
+ idBooster: 78447
+ password: pass
+ firstName: Boris
+ lastName: Dubois
+ email: 78447@supinfo.com
+ promo: 2011
+ campus: montreal
+ 
+Skill(androidSkillBoris):
+ owner: boris
+ label: android
+ rate: 6
+ 
+Skill(cuisineSkillBoris):
+ owner: boris
+ label: cuisine
+ rate: 4
+ 
+Skill(bricoleSkillBoris):
+ owner: boris
+ label: bricole
+ rate: 7
+
+User(gaël):
+ idBooster: 112350
+ password: pass
+ firstName: Gaël
+ lastName: Lamborelle
+ email: 112350@supinfo.com
+ campus: montreal
+ promo: 2011
+
+Skill(androidSkillGael):
+ owner: gaël
+ label: android
+ rate: 6
+ 
+Skill(javaSkillGael):
+ owner: gaël
+ label: java
+ rate: 9
+
+User(angeline):
+ idBooster: 60861
+ password: pass
+ firstName: Angeline
+ lastName: Perdereau
+ email: 60861@supinfo.com
+ campus: montreal
+ promo: 2012
+
+Skill(androidSkillAngeline):
+ owner: angeline
+ label: PHP
+ rate: 8
+ 
+Skill(javaSkillAngeline):
+ owner: angeline
+ label: java
+ rate: 4
+
+User(ivanhoe):
+ idBooster: 80534
+ password: pass
+ firstName: Ivanhoë
+ lastName: Garin
+ email: 80534@supinfo.com
+ campus: montreal
+ promo: 2011
+
+Skill(androidSkillAngeline):
+ owner: angeline
+ label: Java
+ rate: 8
+ 
+Skill(javaSkillAngeline):
+ owner: ivanhoe
+ label: java
+ rate: 4
+
+User(Joanan):
+ idBooster: 79027
+ password: pass
+ firstName: Joanan
+ lastName: Mpo
+ email: 79027@supinfo.com
+ campus: montreal
+ promo: 2011

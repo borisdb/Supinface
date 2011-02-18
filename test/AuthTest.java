@@ -3,7 +3,7 @@ import java.util.*;
 import play.test.*;
 import models.*;
 
-public class BasicTest extends UnitTest {
+public class AuthTest extends UnitTest {
 
 	//Supprime toutes les données dans la bdd avant chaque test
 	@Before

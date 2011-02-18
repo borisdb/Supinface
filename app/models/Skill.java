@@ -8,6 +8,7 @@ import play.db.jpa.Model;
 @Entity
 @Table(name="Skills")
 public class Skill extends Model {
+    @NoRender
     @ManyToOne
     public User owner;
     public String label;

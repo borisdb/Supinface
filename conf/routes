@@ -16,4 +16,13 @@ GET     /admin/?                                Admin.index
 *       /crud                                  module:crud
 
 GET 	/auth/login/{login}/{password}				Auth.login(format:'json')
-GET		/auth/check/{token}							Auth.checkAuth									
+GET		/auth/check/{token}							Auth.checkAuth
+
+GET     /campus/getall/                                     CampusController.getCampuses(format:'json')
+GET     /campus/getuserbycampus/{id}/                       CampusController.getUserByCampus(format:'json')
+
+GET		/user/getall/										UserController.getAllUser(format:'json')
+GET     /user/getuserbyid/{id}/                             UserController.getUserById(format:'json')
+GET     /user/getuserbyidbooster/{idBooster}/                      UserController.getUserByIdBooster(format:'json')
+
+GET		/skill/getskillbyuserid/{id}/						SkillController.getUserSkill(format:'json')

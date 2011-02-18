@@ -2,7 +2,14 @@
 /eclipse
 /tmp
 /crud
+<<<<<<< HEAD
 =======
 /nbproject
 /tmp
 >>>>>>> model
+=======
+Supinface.iml/Supinface.iml
+/Supinface.iml
+/logs
+/test-result
+>>>>>>> refs/heads/login
