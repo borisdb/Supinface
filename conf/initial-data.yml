@@ -5,6 +5,9 @@ Campus(montreal):
 
 Campus(lyon):
   name: Lyon
+  
+Lab(java):
+  name: java-montreal
 
 User(boris):
  idBooster: 78447

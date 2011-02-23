@@ -32,20 +32,21 @@ public class User extends Model {
     public String password;
     public String pictureUrl;
     public int promo;
-    public String other_infos;
+    public String otherInfos;
 
 
-//    @ManyToOne
-//    public Lab lab;
-    
+    @ManyToOne
+    @JoinColumn
+    public Lab lab;
+  
     @ManyToOne
     @JoinColumn
     public Campus campus;
 
 //    @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
 //    public List<Contact> contacts;
-    @NoRender
-    @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+    
+    @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
     public List<Skill> skills;
 //    @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
 //    public List<Group> owned_groups;
@@ -92,7 +93,7 @@ public class User extends Model {
 	}
 	
 	public User(String idBooster, String lastName, String firstName, String email,
-        String password, String pictureUrl, int promo, String other_infos,
+        String password, String pictureUrl, int promo, String otherInfos,
         Campus campus) {
     super();
     this.idBooster = idBooster;
@@ -102,13 +103,13 @@ public class User extends Model {
     this.password = password;
     this.pictureUrl = pictureUrl;
     this.promo = promo;
-    this.other_infos = other_infos;
+    this.otherInfos = otherInfos;
     this.campus = campus;
 }
 
     @Override
 	public String toString() {
-		return idBooster+" : "+firstName+" : "+lastName+" : "+email+" : "+password+" : "+pictureUrl+" : "+promo+" : "+other_infos+" : "+campus.name;
+		return idBooster+" : "+firstName+" : "+lastName+" : "+email+" : "+password+" : "+pictureUrl+" : "+promo+" : "+otherInfos+" : "+campus.name;
 	}
 		
 }

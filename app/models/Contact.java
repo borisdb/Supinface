@@ -11,6 +11,15 @@ public class Contact extends Model {
     @ManyToOne
     private User owner;
     @ManyToOne
-    private Contact_Type contact_type;
+    private ContactType contactType;
     private String value;
+    
+    public Contact(User owner, ContactType contactType, String value) {
+        super();
+        this.owner = owner;
+        this.contactType = contactType;
+        this.value = value;
+    }
+    
+    
 }

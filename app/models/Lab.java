@@ -1,5 +1,6 @@
 package models;
 
+import java.util.Collection;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -11,8 +12,29 @@ import play.db.jpa.Model;
 @Table(name="Labs")
 public class Lab extends Model {
     public String name;
-//    @OneToMany(mappedBy="lab")
-//    public List<User> members;
+    @NoRender
+    @OneToMany(mappedBy="lab")
+    public List<User> members;
     @OneToOne
     public User glm;
+    
+    
+    public Lab(String name, User glm) {
+        super();
+        this.name = name;
+        this.glm = glm;
+    }
+
+
+    public Lab(String name, List<User> members, User glm) {
+        super();
+        this.name = name;
+        this.members = members;
+        this.glm = glm;
+    }
+    
+    
+    
+    
+    
 }

@@ -11,6 +11,8 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 import com.sun.org.apache.bcel.internal.generic.NEW;
 
+import controllers.renders.UnauthorizedResult;
+
 import play.db.jpa.Model;
 import play.jobs.Every;
 import play.jobs.Job;
@@ -24,13 +26,13 @@ public class Auth extends Controller {
     private static ConcurrentHashMap<String, LoggedUser> loggedUserMap = new ConcurrentHashMap<String, LoggedUser>();
 
     public static void login(String login, String password) {
-        String msg = "bad login/password";
+        String msg = "bad_login_password";
         User user = User.connect(login, password);
         if (user != null) {
-            createAuth(user);
-            throw new RenderJson(loggedUserMap, new MyExclusionStrategy(String.class));
+            String token=createAuth(user);
+            renderJSON(token);
         } else {
-           unauthorized("login");
+            throw new UnauthorizedResult(msg);
             }
     }
 
@@ -41,7 +43,6 @@ public class Auth extends Controller {
      * @return
      */
     public static boolean checkAuth(String token) {
-
         if (loggedUserMap.containsKey(token)) {
             LoggedUser loggedUser = loggedUserMap.get(token);
             // 1800000 pour 30 min
@@ -57,9 +58,10 @@ public class Auth extends Controller {
         }
     }
 
-    private static void createAuth(User user) {
+    private static String createAuth(User user) {
         String token = UUID.randomUUID().toString();
         loggedUserMap.put(token, new LoggedUser(user));
+        return token;
     }
 
     @Every("1h")

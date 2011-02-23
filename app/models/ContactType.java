@@ -9,9 +9,9 @@ import play.db.jpa.Model;
 
 @Entity
 @Table(name="Contact_Types")
-public class Contact_Type extends Model {
+public class ContactType extends Model {
     public String name;
     public String urlPicture;
-    @OneToMany(mappedBy = "contact_type",cascade=CascadeType.ALL)
+    @OneToMany(mappedBy = "contactType",cascade=CascadeType.ALL)
     public List<Contact> contacts;
 }
