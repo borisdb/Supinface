@@ -12,6 +12,7 @@ import play.db.jpa.Model;
 public class ContactType extends Model {
     public String name;
     public String urlPicture;
+    @NoRender
     @OneToMany(mappedBy = "contactType",cascade=CascadeType.ALL)
     public List<Contact> contacts;
 }

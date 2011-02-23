@@ -43,10 +43,10 @@ public class User extends Model {
     @JoinColumn
     public Campus campus;
 
-//    @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-//    public List<Contact> contacts;
-    
     @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+    public List<Contact> contacts;
+    
+    @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
     public List<Skill> skills;
 //    @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
 //    public List<Group> owned_groups;

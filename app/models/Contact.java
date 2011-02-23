@@ -1,6 +1,7 @@
 package models;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import play.db.jpa.Model;
@@ -8,11 +9,15 @@ import play.db.jpa.Model;
 @Entity
 @Table(name="Contacts")
 public class Contact extends Model {
+
+    @NoRender
     @ManyToOne
-    private User owner;
+    @JoinColumn
+    public User owner;
     @ManyToOne
-    private ContactType contactType;
-    private String value;
+    @JoinColumn
+    public ContactType contactType;
+    public String value;
     
     public Contact(User owner, ContactType contactType, String value) {
         super();
@@ -20,6 +25,4 @@ public class Contact extends Model {
         this.contactType = contactType;
         this.value = value;
     }
-    
-    
 }
