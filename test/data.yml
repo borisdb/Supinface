@@ -8,6 +8,15 @@ Campus(lyon):
   
 Lab(java):
   name: java-montreal
+  
+ContactType(twitter):
+ name: Twitter
+ 
+ContactType(linkedin):
+ name: Linkedin
+
+ContactType(gmail):
+ name: Gmail
 
 User(boris):
  idBooster: 78447
@@ -17,6 +26,16 @@ User(boris):
  email: 78447@supinfo.com
  promo: 2011
  campus: montreal
+ lab: java
+ 
+Contact(gmailBoris):
+ owner: boris
+ value: deus13@gmail.com
+ contactType: gmail
+  
+Contact(twitterBoris):
+ owner: boris
+ value: "http://twitter.com/#!/borisdb" 
  
 Skill(androidSkillBoris):
  owner: boris

@@ -26,6 +26,7 @@ User(boris):
  email: 78447@supinfo.com
  promo: 2011
  campus: montreal
+ lab: java
  
 Contact(gmailBoris):
  owner: boris
