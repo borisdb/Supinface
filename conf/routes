@@ -26,3 +26,7 @@ GET     /user/getuserbyid/{id}/                             UserController.getUs
 GET     /user/getuserbyidbooster/{idBooster}/                      UserController.getUserByIdBooster(format:'json')
 
 GET		/skill/getskillbyuserid/{id}/						SkillController.getUserSkill(format:'json')
+
+
+GET		/group/getgroupbyid/{id}/							GroupController.getGroupById(format:'json')
+GET		/group/getgroupmembers/{id}/						GroupController.getMembersByGroup(format:'json')

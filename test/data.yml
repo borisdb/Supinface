@@ -28,6 +28,10 @@ User(boris):
  campus: montreal
  lab: java
  
+Group(borisFriends):
+ owner: boris
+ name: supinface
+  
 Contact(gmailBoris):
  owner: boris
  value: deus13@gmail.com
@@ -35,7 +39,8 @@ Contact(gmailBoris):
   
 Contact(twitterBoris):
  owner: boris
- value: "http://twitter.com/#!/borisdb" 
+ value: "http://twitter.com/#!/borisdb"
+ contactType: twitter
  
 Skill(androidSkillBoris):
  owner: boris
@@ -117,3 +122,10 @@ User(Joanan):
  email: 79027@supinfo.com
  campus: montreal
  promo: 2011
+ 
+Group(borisFriends):
+ owner: boris
+ name: supinface
+ members User:
+       - angeline
+       - Joanan

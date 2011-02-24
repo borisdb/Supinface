@@ -48,10 +48,10 @@ public class User extends Model {
     
     @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
     public List<Skill> skills;
-//    @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
-//    public List<Group> owned_groups;
-//    @ManyToMany(mappedBy="members")
-//    public List<Group> inside_groups;
+    @OneToMany(mappedBy = "owner",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+    public List<Group> ownedGroups;
+    @ManyToMany(mappedBy="members")
+    public List<Group> insideGroups;
 
 
     
