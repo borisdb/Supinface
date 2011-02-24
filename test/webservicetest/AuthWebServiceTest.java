@@ -38,7 +38,7 @@ public class AuthWebServiceTest extends FunctionalTest{
         String token=response.out.toString();
         assertStatus(200, response);
         response= GET("/auth/check/"+token);
-        assertEquals("blabla", "true", response.out.toString());
+        assertEquals("true", response.out.toString());
     }
     
 }

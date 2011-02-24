@@ -50,6 +50,5 @@ public class GroupWebServiceTest extends FunctionalTest{
         Group group = Group.find("byName", "supinface").first();
         Response response = GET("/group/getgroupmembers/"+group.id.toString()+"/");
         assertStatus(200, response);
-        System.out.println(response.out.toString());
     }
 }
